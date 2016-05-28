@@ -133,16 +133,18 @@ wrapper {
 
 
 
-<div id="mySidenav" class="sidenav" >
-  
+<div id="mySidenav" class="sidenav">
+
   <li><a class="active" href="home">Home</a></li>
-    <li><a href="cindex">Customer Login</a></li>
-   <li><a href="signUp">Customer Sign Up</a></li>
-   <li><a href="aindex">Admin Login</a></li>
-   <li><a href="categories">View Categories</a></li>
+    <li><a href="showAddCust">Add New Customer</a></li>
+   <li><a href="viewCustomers">View All Customers</a></li>
+   <li><a href="showAddProd">Add New Product</a></li>
+   <li><a href="viewProducts">View All products</a></li>
     <li><a href="aboutus">About Us</a></li>
+     <li><a href="logout">Logout</a></li>
   
-       
+
+               
    
   <br>
   </div>

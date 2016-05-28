@@ -96,14 +96,15 @@ li a:hover:not(.active)
   </div>
 
 
-<h2>Your product details Are As Follows:</h2>
- 
- <table class="table">
+
+<h2>Your details Are As Follows:</h2>
+
+		<table class="table">
 			<thead>
 				<tr>
 					<td>Product Id</td>
 					<td>Product Name</td>
-					<td>Price Tag</td>
+					<td>Product Price</td>
 				</tr>
 			</thead>
 			<tbody class="table-hover">
@@ -112,55 +113,11 @@ li a:hover:not(.active)
 					<td>${data.pid}</td>
 					<td>${data.pname}</td>
 					<td>${data.price}</td>
-					<td><a href="productupdate/${data.pid}">Update</a></td>
-					<td><a href="deleteProducts/${data.pid}">Delete</a></td>
+					<td><a href="updPd/${data.pid}">Update</a></td>
+					<td><a href="delPd/${data.pid}">Delete</a></td>
 				</tr>
 			</c:forEach>
 			</tbody>
- 				</table>
- 
- 
- <!-- 
- <table class="table">
-<thead>
- <tr>
- <td>Product Id</td>
- <td>Product Name</td>
- <td>Product Price</td>
- </tr>
- </thead>
- <tbody class="table-hover">
-<c:forEach var="i" items="${ls}">
-   <tr>
-   <td><c:out value="${i.pid}"/></td>
-    <td> <c:out value="${i.pname}"/></td>
-     <td><c:out value="${i.price}"/></td>
-  		<td><a href="productupdate">Update</a></td>
-   		<td><a href="deleteProducts/${i.pid}">Delete</a></td>
-
-   
-      </tr>
-    
-</c:forEach> 
- </tbody>
 		</table>
-		 -->
-<!--  
-    <tr>
-        <td>User Name</td>
-        <td>${userName}</td>
-    </tr>
-     <tr>
-        <td>Email</td>
-        <td>${emailId}</td>
-    </tr>
-    
-    
-     <tr>
-        <td>Full Name</td>
-        <td>${fullName}</td>
-    </tr>
-    -->
-
-</body>
+	</body>
 </html>

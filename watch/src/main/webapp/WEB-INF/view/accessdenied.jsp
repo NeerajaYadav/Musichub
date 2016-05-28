@@ -4,13 +4,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=windows-1256">
-<title>Insert title here</title>
+<title>Permission</title>
 </head>
 <body>
-
-Access Denied!!!!!!
-
-
-
+<br/><br/><br/>
+<h1>Invalid Login Credentials. Please try Again.</h1>
+<a href="adminLogin"> Login</a>
+<br/><br/><br/>
+<a href="signUp">Signup</a>
 </body>
 </html>

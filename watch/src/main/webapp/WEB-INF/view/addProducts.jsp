@@ -87,11 +87,8 @@ li a:hover:not(.active)
   <ul>
   <li><a class="active" href="home">Home</a></li>
     <li><a href="aboutus">Aboutus</a></li>
-   <li><a href="login">Login</a></li>
-   <li><a href="allProducts">Shopping</a></li>
-   <li><a href="reg">RegisterHere</a></li>
-    <li><a href="adminLink">Admin Access Page</a></li>
-   </ul>
+   <li><a href="logout">Logout</a></li>
+  </ul>
                
    
   <br>
@@ -100,28 +97,34 @@ li a:hover:not(.active)
 </div>
   
 <h2>Product Information</h2>
-<form:form method="POST" action="./addProduct">
+<form:form method="GET" action="./addProduct" commandName="prod">
+<form:errors path="*" cssClass="formErrorBlock"/>  
+			
    <table>
   
+  <!--  
     <tr>
         <td><form:label path="pid">Product Id</form:label></td>
         <td><form:input path="pid" /></td>
     </tr>
+  -->
   
     <tr>
-        <td><form:label path="pname">Product Name</form:label></td>
+        <td><form:label path="pname">Enter Product Name</form:label></td>
         <td><form:input path="pname" /></td>
+        <td> <form:errors path="pname" cssClass="formFeildError"/></td>
     </tr>
     <tr>
         <td><form:label path="price">Price</form:label></td>
         <td><form:input path="price" /></td>
+        	<td> <form:errors path="price"></form:errors></td>
     </tr>
     
     <tr>
-      <td colspan="2">
-            <input type="submit" value="Submit"/>
-        </td>
-    </tr>
+					<td> <input type="submit" value="Add Product"/> </td>
+					<td> <input type="reset" value="Clear Data"/> </td>
+	</tr>
+  
     
 </table>  
 </form:form>

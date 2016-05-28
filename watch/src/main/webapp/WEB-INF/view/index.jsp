@@ -31,9 +31,14 @@
 <body>
 
 <div class="w3-content w3-section" style="max-width:500px">
-  <img class="mySlides" src="<spring:url value="resources/images/watch1.jpg"/>" align="left" style="width:100%" style="height:150%">
-  <img class="mySlides" src="<spring:url value="resources/images/watch2.jpg"/>" align="left" style="width:100%" style="height:150%">
+  <img class="mySlides" src="<spring:url value="resources/images/watch1.jpg"/>" align="left" style="width:100%" style="height:350%">
+  <img class="mySlides" src="<spring:url value="resources/images/watch2.jpg"/>" align="left" style="width:100%" style="height:350%">
   <img class="mySlides" src="<spring:url value="resources/images/watch3.jpg"/>" align="left" style="width:100%" style="height:150%">
+  <img class="mySlides" src="<spring:url value="resources/images/watch4.jpg"/>" align="left" style="width:100%" style="height:150%">
+  <img class="mySlides" src="<spring:url value="resources/images/watch5.jpg"/>" align="left" style="width:100%" style="height:150%">
+  <img class="mySlides" src="<spring:url value="resources/images/watch6.jpg"/>" align="left" style="width:100%" style="height:150%">
+  
+
 </div>
 
 <script>
@@ -131,18 +136,15 @@ wrapper {
 
 
 <div id="mySidenav" class="sidenav">
-  
+ 
   <li><a class="active" href="home">Home</a></li>
-    <li><a href="aboutus">Aboutus</a></li>
-   <li><a href="adminLogin">Login</a></li>
-   <li><a href="allProducts">Shopping</a></li>
-   <li><a href="show">Upload File Here</a></li>
-   <li><a href="productupdate">Update Product</a></li>
-    <li><a href="addProducts">Add Product</a></li>
-   <li><a href="signUp">SignUp Here</a></li>
-   <li><a href="result">View Products</a></li>
-   <li><a href="delete">Delete Data</a></li>
-   </ul>
+    <li><a href="cindex">Customer Login</a></li>
+   <li><a href="signUp">Customer Sign Up</a></li>
+   <li><a href="aindex">Admin Login</a></li>
+   <li><a href="categories">View Categories</a></li>
+    <li><a href="aboutus">About Us</a></li>
+  
+
                
    
   <br>

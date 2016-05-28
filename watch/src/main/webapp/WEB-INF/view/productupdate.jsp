@@ -1,53 +1,127 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
-<%@taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html ng-app="myAlbum">
+<html ng-app="myApp">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Welcome to Product Registration Form</title>
-<link rel="stylesheet" 	href="<c:url value="/resources/bootstrap/css/bootstrap.min.css" />">
-<link href="resources/includes/css/bootstrap-glyphicons.css" 	rel="stylesheet">
-<script src="<c:url value="/resources/includes/js/jquery-1.8.2.min.js" />"></script>
-<script src="<c:url value="/resources/bootstrap/js/bootstrap.min.js" />"></script>
-<script src="<c:url value="/resources/angular-1.5.5/angular.min.js" />"></script>
+
+ <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+       <link rel="stylesheet" href="<spring:url value="/resources/css/bootstrap.min.css"/>">
+  <script src="<spring:url value="/resources/js/jquery.min.js"/>"></script>
+  <script src="<spring:url value="/resources/js/bootstrap.min.js"/>"></script>
+  <script src = "<spring:url value="/resources/js/angular.min.js"/>"></script>
+   <style>
+ input[type=text] {
+    width: 130px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('searchicon.png');
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus {
+    width: 100%;
+}
+</style>
+ 
+ 
+ 
+  <style>
+  .carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+      width: 70%;
+      margin: auto;
+  }
+  </style>
+
+
+<style>
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) 
+{
+    background-color: #111;
+}
+
+.active {
+    background-color: #4CAF50;
+}
+
+</style>
+
 
 </head>
 
+<body >
+<div class="container" id="main">
 
-<body><div class="container" id="main">
 
-		<div class="navbar navbar-fixed-top">
-			<div class="container">
-				<div class="nav-collapse navbar-responsive-collapse">
-					<ul class="nav navbar-nav">
-						<li class="active"><a href="./">Home</a></li>
-						<li><a href="aboutus">ABOUT US</a></li>
-						<li><a href="signUp">Sign Up </a></li>
-						<li><a href="signup"><span class="glyphicon glyphicon-user"></span> SignUp </a></li>
-						<li><a href="login"><span class="glyphicon glyphicon-off"></span> Login </a></li>
-					</ul>
-				</div>
-			</div>
-			<!-- end Container -->
-		</div>
-		<!-- Nav bar Ends -->
-	</div>
-	 <div class="container">
-		<div class="jumbotron">
-			<p style="float: left;">
-			 Update Product Page
-			</p>
-		</div> 
+<p> <h2 style="color:#3CGH42;"> Welcome to the shopping world of your Time!!!!!</h2> </p>
 
-<form:form action="saveCategory" method="post">
+<div>
+  <ul>
+  <li><a class="active" href="home">Home</a></li>
+    <li><a href="aboutus">Aboutus</a></li>
+   <li><a href="logout">Logout</a></li>
+  </ul>
+               
+   
+  <br>
+  </div>
+
+<h2>Update Product</h2>
+<form:form action="/watch/upd" method="post" >
 	<table>
- 	<tr > <td> <form:label path="pid">Product Id:</form:label></td><td><form:input path="pid" /></td></tr>
-	<tr> <td> <form:label path="pname">Product Name:</form:label></td><td><form:input path="pname" /></td></tr>
-	<tr> <td> <form:label path="price">Product Price</form:label></td><td><form:input path="price" /></td></tr>
+ 	<!-- 
+ 	<tr > <td> 
+ 	<form:label path="pid">Product Id:</form:label>
+ 	</td>
+ 	<td><form:input path="pid" /></td></tr>
+	 -->
+	<tr> 
+	<td> 
+	<form:label path="pname">Product Name:</form:label>
+	</td>
+	<td>
+	<form:input path="pname" /></td></tr>
+	<tr> 
+	<td> 
+	<form:label path="price">Product Price</form:label></td>
+	<td>
+	<form:input path="price" />
+	</td>
+	</tr>
 	
+	<tr>
+	<td><input type="submit" value="Update"/></td>
 	
- 	<tr><td></td><td><input type="submit" value="SAVE"/></td></tr>
+	<td><input type="reset" value="Clear Data"></td></tr>
 	</table>
 </form:form>
  </div>

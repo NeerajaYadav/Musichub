@@ -15,11 +15,11 @@
 <p> <h2 style="color:#3CGH42;"> Welcome to the shopping world of your Time!!!!!</h2> </p>
 <div>
   <ul>
-  <li><a class="active" href="home">Home</a></li>
-    <li><a href="aboutus">Aboutus</a></li>
-   <li><a href="login">Login</a></li>
-   <li><a href="allProducts">Shopping</a></li>
-   <li><a href="reg">RegisterHere</a></li>
+  <li><a  href="home">Home</a></li>
+    <li><a href="cindex">Customer Login</a></li>
+   <li><a href="signUp">Customer Sign Up</a></li>
+   <li><a href="aindex">Admin Login</a></li>
+   <li><a class="active" href="aboutus">About Us</a></li>
    </ul>
                
    

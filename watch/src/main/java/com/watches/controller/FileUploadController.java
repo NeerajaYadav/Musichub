@@ -62,6 +62,6 @@ public class FileUploadController {
     			System.out.println("You failed to upload" +name +" " +e.getMessage());
     		}
     	}
-        return "index";
+        return "home";
     }
 }

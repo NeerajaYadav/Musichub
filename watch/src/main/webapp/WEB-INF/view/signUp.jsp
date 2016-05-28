@@ -87,10 +87,6 @@ li a:hover:not(.active)
   <ul>
   <li><a class="active" href="home">Home</a></li>
     <li><a href="aboutus">Aboutus</a></li>
-   <li><a href="login">Login</a></li>
-   <li><a href="allProducts">Shopping</a></li>
-   <li><a href="reg">RegisterHere</a></li>
-    <li><a href="adminLink">Admin Access Page</a></li>
    </ul>
                
    
@@ -101,7 +97,7 @@ li a:hover:not(.active)
 
       
 <h2>Customer Information</h2>
-<form:form method="POST" action="./addCustomer">
+<form:form method="POST" action="./addCustomer" commandName="cust">
 <form:errors path="*" cssClass="errorblock" element="div" />
    <table>
   
@@ -126,15 +122,17 @@ li a:hover:not(.active)
         <td><form:errors path="emailId" cssClass="error" /></td>
     </tr>
     
+    <!-- 
     <tr>
         <td><form:label path="enabled">Enabled</form:label></td>
         <td><form:input path="enabled" /></td>
         <td><form:errors path="enabled" cssClass="error" /></td>
     </tr>
-    
+     -->
     <tr>
       <td colspan="2">
             <input type="submit" value="SAVE"/>
+            <input type="reset" value="Clear Data"/>
         </td>
     </tr>
     

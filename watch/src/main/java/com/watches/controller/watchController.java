@@ -25,339 +25,35 @@ import com.watches.model.Product;
 import com.watches.service.CustomerServiceDao;
 import com.watches.service.ProductServiceDao;
 
-
-
-
-
-
 @Controller
 public class watchController {
+
+	ModelAndView m = new ModelAndView();
+	
+	
 	@Autowired
 	private CustomerServiceDao cd;
 	@Autowired
 	private ProductServiceDao pd;
-	
 
-	 @RequestMapping(value="/", method=RequestMethod.GET)
-	 public ModelAndView show() {
-		 ModelAndView m1 = new ModelAndView("index");	
-		 
-		 System.out.println("Welcome to the index");
-		 return m1;
-		 } 
-		 
-
-	 @RequestMapping(value="/aboutus", method=RequestMethod.GET)
-	 public ModelAndView about() {
-		 ModelAndView m1 = new ModelAndView("aboutus");	
-		 
-		 System.out.println("Welcome to the aboutus");
-		 return m1;
-		 } 
-		 
-	 
-
-	 @RequestMapping(value="/allProducts", method=RequestMethod.GET)
-	 public ModelAndView show1() {
-		 ModelAndView m1 = new ModelAndView("allProducts");	
-		 
-		 System.out.println("Welcome to the allproducts");
-		 return m1;
-		 } 
-		 
-	 
-	 
-
-	 @RequestMapping(value="/home", method=RequestMethod.GET)
-	 public ModelAndView show2() {
-		 ModelAndView m1 = new ModelAndView("home");	
-		 
-		 System.out.println("Welcome to the home");
-		 return m1;
-		 } 
-		 
-
-	 @RequestMapping(value="/login", method=RequestMethod.GET)
-	 public ModelAndView show3() {
-		 ModelAndView m1 = new ModelAndView("login");	
-		 
-		 System.out.println("Welcome to the login");
-		 return m1;
-		 } 
-		 
-
-	 @RequestMapping(value="/reg", method=RequestMethod.GET)
-	 public ModelAndView show5() {
-		 ModelAndView m1 = new ModelAndView("reg");	
-		 
-		 System.out.println("Welcome to the Register");
-		 return m1;
-		 } 
-		 
-	 @RequestMapping(value="/adminLink", method=RequestMethod.GET)
-	 public ModelAndView show6() {
-		 ModelAndView m1 = new ModelAndView("adminLink");	
-		 
-		 System.out.println("Welcome to the Admin Link Page");
-		 return m1;
-		 } 	 
-	 
-	 
-	 
-	 @RequestMapping(value="/productInfo", method=RequestMethod.GET) 
-	public ModelAndView productGson()
-	{
-	//prodImpl pi =new prodImpl();
-		/*prodImpl p1 = new prodImpl();
-	Gson gson = new GsonBuilder().create();
-   String s1= gson.toJson(p1.addProduct());
-   System.out.println(s1.toString());
-   ModelAndView m2= new ModelAndView("productInfo");
-   m2.addObject("data",s1);
-   */
-    return null;
-    
-	}
-	
-	 
-	 
-	 
-	 /*
-	 @RequestMapping(value="/signUp", method=RequestMethod.GET)
-	 public ModelAndView show7() {
-		 ModelAndView m1 = new ModelAndView("signUp");	
-		 
-		 System.out.println("Welcome to the Sign Up Page");
-		 m1.addObject("command", new Customer());
-		 
-		 return m1;
-		 } 	 
- 
-	 
- @RequestMapping(value="/addProduct", method=RequestMethod.POST)
-	 public ModelAndView show8(@ModelAttribute("watches")Customer c, ModelMap model) {
-		 ModelAndView m1 = new ModelAndView("signUp");
-		   
-		// m1.setViewName("result");
-		 cd.add(c);
-		 System.out.println("In Add Product page");
-		 
-		 //s2.addsignupProduct(s1);
-		 return m1;
-		 }
-
- 
- 
- 
-@RequestMapping(value="/edit", method=RequestMethod.POST)
- public ModelAndView show9(@ModelAttribute("watches")Customer c, ModelMap model) {
-	 ModelAndView m1 = new ModelAndView("signUp");
-	   
-	m1.setViewName("result");
-	 cd.edit(c);;
-	 System.out.println("In update page");
-	 
-	 //s2.addsignupProduct(s1);
-	 return m1;
-	 }
- 
-
-
-
-
-
-@RequestMapping(value="/delete", method=RequestMethod.POST)
- public ModelAndView show11(@ModelAttribute("watches")Customer c, ModelMap model) {
-	 ModelAndView m1 = new ModelAndView("signUp");
-	   
-	 m1.setViewName("result");
-	 cd.delete(c.getId());
-	 System.out.println("In Delete page");
-	 
-	 //s2.addsignupProduct(s1);
-	 return m1;
-	 }
- 
-
-
-
-
- 
-*/
-
-/*
- public String saveOrUpdateUser(@ModelAttribute("userForm") @Validated User user,
-			BindingResult result, Model model, 
-			final RedirectAttributes redirectAttributes) {
-
-		logger.debug("saveOrUpdateUser() : {}", user);
-
-		if (result.hasErrors()) {
-			populateDefaultModel(model);
-			return "users/userform";
-		} else {
-
-			// Add message to flash scope
-			redirectAttributes.addFlashAttribute("css", "success");
-			if(user.isNew()){
-			  redirectAttributes.addFlashAttribute("msg", "User added successfully!");
-			}else{
-			  redirectAttributes.addFlashAttribute("msg", "User updated successfully!");
-			}
-			
-			userService.saveOrUpdate(user);
-			
-			// POST/REDIRECT/GET
-			return "redirect:/users/" + user.getId();
-
-			// POST/FORWARD/GET
-			// return "user/list";
-
-		}
-
+	@RequestMapping(value="/",method=RequestMethod.GET)
+	public ModelAndView goindex(){
+		System.out.println("-----Index Controller-----");
+		ModelAndView m = new ModelAndView("index");
+		//m.setViewName("Home");
+		return m;
 	}
 
-
- */
-
-	 
-	 
-	 
-	 @RequestMapping(value="/signUp", method=RequestMethod.GET)
-	 public ModelAndView show11() {
-		 ModelAndView m1 = new ModelAndView("signUp");	
-		 
-		 System.out.println("Welcome to the Sign Up Page");
-		 m1.addObject("command", new Customer());
-		 
-		 return m1;
-		 } 	 
- 
-	 
- @RequestMapping(value="/addCustomer", method=RequestMethod.POST)
 	
- public ModelAndView addCustomer(@Valid Customer customer, BindingResult result) {
-try{
-	 	cd.saveOrUpdate(customer);
-}
-catch(Exception e)
-{
-	
-}ModelAndView m = new ModelAndView("signUp");
-		if (result.hasErrors()) {
-			
-			
-			m.addObject("command", new Customer());
-			return m;
-		} else {
-			return m;
-		}
 
+	@RequestMapping(value="/home",method=RequestMethod.GET)
+	public ModelAndView gohome(){
+		System.out.println("-----Home Controller-----");
+		ModelAndView m = new ModelAndView("home");
+		//m.setViewName("Home");
+		return m;
 	}
- 
- /*public ModelAndView show12(@Valid @ModelAttribute("watch")Customer c,  BindingResult result, ModelMap model) {
-		 ModelAndView m1 = new ModelAndView("upload");
-		   
-		// m1.setViewName("result");
-		 cd.saveOrUpdate(c);
-		 System.out.println("In Add Product page");
-		 
-		 //s2.addsignupProduct(s1);
-		 return m1;
-		 }
 
-	 */
-	 
-	 
-	 
-	 
-	 
-	 
-	 @RequestMapping(value="/addProducts", method=RequestMethod.GET)
-	 public ModelAndView show7() {
-		 ModelAndView m1 = new ModelAndView("addProducts");	
-		 
-		 System.out.println("Welcome to the Sign Up Page");
-		 m1.addObject("command", new Product());
-		 
-		 return m1;
-		 } 	 
- 
-	 
-	 @RequestMapping(value="/addProduct",method=RequestMethod.POST)
-	 public String addProduct(@Valid Product product, BindingResult result) {
-
-			if (result.hasErrors()) {
-				return "addProducts";
-			} else {
-				return "result";
-			}
-
-		}
-	 
-	 
-	 
-	 /* public ModelAndView show8(@ModelAttribute("watch")Product p){
-		 System.out.println("Add Product");
-		 pd.addCategory(p);
-		 return new ModelAndView("result");
-	 }
-*/
-
-	 
-	 
-	 
- 
- 
-
- @RequestMapping(value="/result", method=RequestMethod.GET)
-	 public ModelAndView show10() {
-		 ModelAndView m1 = new ModelAndView("result");
-		   
-		 m1.setViewName("result");
-		 m1.addObject("ls", pd.getCategories());
-		
-		
-		 System.out.println("Welcome To View page");
-		 
-		 //s2.addsignupProduct(s1);
-		 return m1;
-		 }	 
- 
- 	@RequestMapping(value="/productupdate",method=RequestMethod.GET)
- 	public ModelAndView pdup(){
- 		System.out.println("Update Method");
- 		ModelAndView m = new ModelAndView();
- 		m.setViewName("productupdate");
- 		m.addObject("command", new Product());
- 		return m;
- 	}
- 
- 
-
-	@RequestMapping(value = "/saveCategory", method = RequestMethod.POST)
-	public ModelAndView saveEmployee(@ModelAttribute("command") Product category) {
-		System.out.println("Update Method 1");
-		pd.update(category);
-		return new ModelAndView("redirect:/result");
-	}
- 
-	
-	
-	
-
-	@RequestMapping(value = "/deleteProducts/{id}", method = RequestMethod.GET)
-	public ModelAndView deleteProduct(@PathVariable("id")int id ) {
-		System.out.println("Update Method 1");
-		pd.deleteCategory(id);
-		return new ModelAndView("redirect:/result");
-	}
- 
-	
-	
-	
-	
-	
 	@RequestMapping(value="/adminLogin", method = RequestMethod.GET)
 	public ModelAndView login()
 	{
@@ -369,48 +65,185 @@ catch(Exception e)
 	}
 	
 	
+	 @ModelAttribute("cust")
+	 public Customer getCustomer()
+	 {
+		 return new Customer();
+	 }
 
-	@RequestMapping(value="/logout", method = RequestMethod.GET)
-	public String logout(ModelMap model) {
-	model.addAttribute("logout", "true");
-	return "adminLogin";
+
+	 @RequestMapping(value="/signUp", method=RequestMethod.GET)
+	 public ModelAndView signup(){
+			System.out.println("-----Signup Controller-----");
+			m.setViewName("signUp");
+			//m.addObject("command", new Customer());
+			return m;
+		}
+
+ @RequestMapping(value="/addCustomer", method=RequestMethod.POST)
+
+ public String addCustomer(@ModelAttribute("cust")@Valid Customer customer, BindingResult result) {
+	 try{
+		 cd.saveOrUpdate(customer);
+	 	}
+	 catch(Exception e)
+	 {
+		 
+	 }
+	 //ModelAndView m = new ModelAndView("result");
+	 if (result.hasErrors()) 
+	 {
+		// m.addObject("command", new Customer());
+		return "signUp";
+	}
 	 
-	}
-	
-	@RequestMapping(value="/accessdenied", method = RequestMethod.GET)
-	public String loginError(ModelMap model) {
-		System.out.println("welcome to error page");
-	model.addAttribute("accessdenied", "true");
-	return "adminLogin";
+	 else 
 	 
+		return "cindex";
+}
+ 
+ @RequestMapping("/cindex")
+	public ModelAndView custindex(){
+		m.setViewName("cindex");
+		return m;
+	}
+	
+	@RequestMapping("/aindex")
+	public ModelAndView aindex(){
+		m.setViewName("aindex");
+		return m;
+	
+	}
+	
+	@RequestMapping(value="/categories",method=RequestMethod.GET)
+	public ModelAndView showCategories(){
+		System.out.println("-----Categories Controller-----");
+		m.addObject("ls", pd.getCategories());
+		m.setViewName("categories");
+		return m;
 	}
 	
 	
+	@RequestMapping(value="/showAddCust",method=RequestMethod.GET)
+	public ModelAndView showAddCust(){
+		m.setViewName("signUp");
+		m.addObject("command", new Customer());
+		return m;
+	}	
+	 
+	 @RequestMapping(value="/viewCustomers",method=RequestMethod.GET)
+		public ModelAndView viewuser(){
+		 ModelAndView m = new ModelAndView();
+			m.setViewName("ViewCustomers");
+			try{
+			m.addObject("ls", cd.findAll());
+			}
+			catch(Exception e){
+				System.out.println("Unable to view Customers.\t"+e);
+				m.setViewName("aindex");
+			}
+			return m;
+		}
+
+	 
+	 	  
+	 @RequestMapping(value="/showAddProd",method=RequestMethod.GET)
+		public ModelAndView showAddProd(){
+			m.setViewName("addProducts");
+			m.addObject("command", new Product());
+			return m;
+		}
+	 
 	
-	
-/*	
-	@RequestMapping(value = "/addCategory", method = RequestMethod.GET)
-	public ModelAndView addCategory(@ModelAttribute("command")  Product category,
-			BindingResult result) {
-		Map<String, Object> model = new HashMap<String, Object>();
-		model.put("categories",  pd.getCategories());
-		return new ModelAndView("addCategory", model);
-	}
- 
- */
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
- 
+	 
+	 @ModelAttribute("prod")
+	 public Product getProduct()
+	 {
+		 return new Product();
+	 }
+		
+		@RequestMapping(value="/addProduct",method=RequestMethod.GET)
+		public ModelAndView addProd(@ModelAttribute("prod")@Valid Product prod,BindingResult result){
+			m.setViewName("upload");
+			try{
+				pd.addCategory(prod);
+			}
+			catch(Exception e){}
+			if(result.hasErrors())
+				m.setViewName("addProducts");
+			return m;
+		} 
+
+		@RequestMapping(value="/viewProducts",method=RequestMethod.GET)
+		public ModelAndView showProd(){
+			m.setViewName("ViewProducts");
+			m.addObject("ls", pd.getCategories());
+			return m;
+		}	 
+	 int a;
+		@RequestMapping(value="/updPd/{id}",method=RequestMethod.GET)
+		public ModelAndView updProd(@PathVariable("id")int id){
+			m.setViewName("productupdate");
+			//m.addObject("command", pobj.viewProductById(id));
+			m.addObject("command", pd.getCategory(id));
+			System.out.println( pd.getCategory(id));a=id;
+			return m;
+		}
+	 
+		 
+		@RequestMapping(value="/upd",method=RequestMethod.POST)
+		public ModelAndView uPrd(@ModelAttribute("watch")Product p){
+			p.setPid(a);
+			pd.update(p);
+			m.setViewName("redirect:/viewProducts");
+			return m;
+		}
+
+		 
+		@RequestMapping(value="/delPd/{id}",method=RequestMethod.GET)
+		public ModelAndView delProd(@PathVariable("id")int id){
+			pd.deleteCategory(id);
+			m.setViewName("redirect:/viewProducts");
+			return m;
+		}
+		 //public String doaddcart(@RequestParam(value="id", required=true) int id){
+		//@RequestParam("id")int id
+			
+	 
+		@RequestMapping(value="/addcart/{id}")
+		public String doaddcart(@RequestParam("id")int id){
+			System.out.println("p = "+pd.getCategory(id));
+			return "confirm";
+		}
+		
+		@RequestMapping("/confirm")
+		public String doconfirm(){
+			m.setViewName("proddelivery");
+			System.out.println("confirmed");
+			return "proddelivery";
+		}
+		
+		
+		@RequestMapping(value="/aboutus",method=RequestMethod.GET)
+		public ModelAndView about(){
+			System.out.println("-----AboutUs Controller-----");
+			m.setViewName("aboutus");
+			return m;
+		}
+		
+		@RequestMapping(value="/logout",method=RequestMethod.GET)
+		public ModelAndView lgot(){
+			System.out.println("-----Log Controller-----");
+			m.setViewName("logout");
+			return m;
+		}
+		
+		@RequestMapping(value="/accessdenied",method=RequestMethod.GET)
+		public ModelAndView gohome1(){
+			System.out.println("-----Access Controller-----");
+			m.setViewName("accessdenied");
+			return m;
+		}		
 }
 
 

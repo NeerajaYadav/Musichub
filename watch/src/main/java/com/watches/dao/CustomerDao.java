@@ -14,4 +14,5 @@ public interface CustomerDao {
 	public void save(Customer c);
 	public void update(Customer c);
 	public void delete(int id);
+	//public List<Customer> viewAllCustomers();
 }

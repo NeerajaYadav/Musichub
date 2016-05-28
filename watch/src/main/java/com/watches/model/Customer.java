@@ -2,6 +2,7 @@ package com.watches.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
@@ -15,10 +16,22 @@ import org.hibernate.validator.constraints.NotEmpty;
 public class Customer {
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
 	@NotEmpty(message = "Please enter your username.")
 	private String userName;
+	
+	/*
+	 @Pattern.List({
+    @Pattern(regexp = "(?=.*[0-9])", message = "Password must contain one digit."),
+    @Pattern(regexp = "(?=.*[a-z])", message = "Password must contain one lowercase letter."),
+    @Pattern(regexp = "(?=.*[a-z])", message = "Password must contain one lowercase letter."),
+    @Pattern(regexp = "(?=\\S+$)", message = "Password must contain no whitespace.")
+})
+
+	 */
+	
+	
 	 @NotEmpty(message = "Please enter your password.")
 	 @Size(min = 6, max = 15)
 	private String password;

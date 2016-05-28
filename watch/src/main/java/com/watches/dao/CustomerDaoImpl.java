@@ -22,6 +22,17 @@ public class CustomerDaoImpl implements CustomerDao {
 	private SessionFactory sf;
 
 	@SuppressWarnings("unchecked")
+/*	public List<Customer> viewAllCustomers() {
+		// TODO Auto-generated method stub
+		Session s =sf.getCurrentSession();
+		Transaction t = s.beginTransaction();
+		List<Customer> l= (List<Customer>)sf.getCurrentSession().createCriteria(Customer.class).list();
+		t.commit();
+		return l;
+	}
+	
+	*/
+	
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = false)
 	public List<Customer> getItems() {		
 		 Session session=sf.getCurrentSession();

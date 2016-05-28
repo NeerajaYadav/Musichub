@@ -133,16 +133,15 @@ wrapper {
 
 
 
-<div id="mySidenav" class="sidenav" >
-  
+<div id="mySidenav" class="sidenav">
+
   <li><a class="active" href="home">Home</a></li>
-    <li><a href="cindex">Customer Login</a></li>
-   <li><a href="signUp">Customer Sign Up</a></li>
-   <li><a href="aindex">Admin Login</a></li>
-   <li><a href="categories">View Categories</a></li>
-    <li><a href="aboutus">About Us</a></li>
+    <li><a href="categories">All Categories</a></li>
+   <li><a href="aboutus">About Us</a></li>
+     <li><a href="logout">Logout</a></li>
   
-       
+
+               
    
   <br>
   </div>

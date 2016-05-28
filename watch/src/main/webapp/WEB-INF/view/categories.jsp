@@ -101,7 +101,7 @@ li a:hover:not(.active)
  <table class="table">
 			<thead>
 				<tr>
-					<td>Product Id</td>
+					<td><th>Product Id</th></td>
 					<td>Product Name</td>
 					<td>Price Tag</td>
 				</tr>
@@ -112,12 +112,15 @@ li a:hover:not(.active)
 					<td>${data.pid}</td>
 					<td>${data.pname}</td>
 					<td>${data.price}</td>
-					<td><a href="productupdate/${data.pid}">Update</a></td>
-					<td><a href="deleteProducts/${data.pid}">Delete</a></td>
+					<td><a name="_eventId_addtocart" href="addcart/${data.pid}">Add to Cart</a></td>
+					<td><input type="text" name="_flowExecutionKey" value="${flowExecutionKey}"></td>
 				</tr>
 			</c:forEach>
 			</tbody>
- 				</table>
+		</table>
+
+ 
+ 
  
  
  <!-- 
